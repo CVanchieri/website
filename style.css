@@ -1,0 +1,576 @@
+/* Monokai Color Palette */
+:root {
+    --monokai-bg: #272822; /* Dark Grey/Black - fallback if image fails */
+    --monokai-text: #F8F8F2; /* Off-White */
+    --monokai-red: #F92672;
+    --monokai-orange: #FD971F;
+    --monokai-yellow: #E6DB74;
+    --monokai-green: #A6E22E;
+    --monokai-blue: #66D9EF;
+    --monokai-purple: #AE81FF;
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: var(--monokai-text);
+    background-color: var(--monokai-bg); /* Fallback background color */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column;
+
+    /* Static Background Image */
+    background-image: url('websitebackground.jpg'); /* Your specified background image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed while content scrolls */
+    position: relative; /* Needed for the pseudo-element overlay */
+}
+
+/* Overlay for the background image to enhance text readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay with 60% opacity */
+    z-index: -1; /* Place behind content */
+}
+
+/* Header Styles */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo .logo-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--monokai-yellow);
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.main-nav .nav-link {
+    color: var(--monokai-text);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 30px;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-link:hover {
+    color: var(--monokai-blue);
+}
+
+.main-nav .sign-up-btn {
+    background-color: var(--monokai-red);
+    color: var(--monokai-bg);
+    padding: 8px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+}
+
+.main-nav .sign-up-btn:hover {
+    background-color: #55B7D1; /* A slightly lighter blue */
+    color: var(--monokai-bg);
+}
+
+/* Hero Section Styles */
+.hero-section {
+    flex-grow: 1; /* Allows the hero section to take up available space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px; /* Add some padding around the content */
+}
+
+.hero-content {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Vertically align items in the center */
+    gap: 40px; /* Space between image and text */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for the content box */
+    padding: 40px 60px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    max-width: 1200px; /* Max width for the content box, increased to accommodate side-by-side */
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-align: left; /* Align text within the content box to the left */
+}
+
+.hero-image-container {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    margin-bottom: 0; /* Remove previous margin if stacking */
+}
+
+.hero-profile-picture {
+    width: 180px; /* Larger size for the profile picture */
+    height: 180px;
+    border-radius: 50%; /* Make it circular */
+    border: 5px solid var(--monokai-blue); /* Add a border matching the theme */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    box-shadow: 0 0 20px rgba(102, 217, 239, 0.5); /* Glowing effect around the picture */
+}
+
+.hero-text-content {
+    flex-grow: 1; /* Allow text content to take remaining space */
+}
+
+.hero-text-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2em, 4vw, 3.5em); /* Responsive font size */
+    color: var(--monokai-text);
+    margin-bottom: 0; /* Remove default margin from h1 */
+    line-height: 1.3;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-align: left; /* Ensure the text is aligned left */
+}
+
+/* Responsive adjustments for Hero Section */
+@media (max-width: 900px) { /* Adjust breakpoint for stacking */
+    .hero-content {
+        flex-direction: column; /* Stack image and text vertically on smaller screens */
+        padding: 30px 40px;
+        text-align: center; /* Center text when stacked */
+    }
+
+    .hero-image-container {
+        margin-bottom: 30px; /* Add space back when stacked, will be overridden for smaller mobiles */
+    }
+
+    .hero-text-content h1 {
+        text-align: center; /* Center the text when stacked */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-profile-picture {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Reduce header text size on mobile */
+    .logo .logo-link {
+        font-size: 1.4em; /* Smaller font size for mobile header */
+    }
+
+    /* Remove space between image and text on index page mobile view */
+    .hero-image-container {
+        margin-bottom: 0; /* Remove margin below the image on small screens */
+    }
+
+    .hero-text-content h1 {
+        margin-top: 15px; /* Add a small top margin to the text for separation from image */
+        font-size: clamp(1.5em, 3.5vw, 2.5em); /* Adjust font size further for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav {
+        margin-top: 15px;
+    }
+
+    .main-nav .nav-link {
+        margin: 0 10px;
+    }
+
+    .hero-content {
+        padding: 20px;
+        gap: 20px; /* Reduce gap on very small screens */
+    }
+
+    .hero-profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-text-content h1 {
+        font-size: clamp(1.2em, 3vw, 2em); /* Further adjustment for very small screens */
+    }
+}
+
+/* About Page Styles */
+.about-page-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.about-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px 80px; /* Increased horizontal padding */
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    max-width: 1200px; /* Increased max-width for wider box */
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    color: var(--monokai-text);
+    text-align: left;
+}
+
+/* Specific styles for text within the About Me (about-container) */
+.about-container .about-text {
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-size: clamp(2.5em, 3.8vw, 3.45em); /* Keep the larger font size */
+    line-height: 1.7;
+}
+
+.about-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--monokai-yellow);
+    font-size: clamp(3em, 4vw, 5em);
+    margin-bottom: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Accordion Styles */
+.accordion {
+    margin-top: 20px;
+}
+
+.accordion-header {
+    background-color: var(--monokai-red);
+    color: var(--monokai-bg);
+    cursor: pointer;
+    padding: 10px;
+    width: 90%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5em;
+    font-weight: 700;
+    transition: 0.4s;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background-color: #55B7D1;
+}
+
+.accordion-header.active {
+    background-color: var(--monokai-blue);
+    color: var(--monokai-bg);
+}
+
+.accordion-header .icon::before { /* Use ::before pseudo-element for the arrow */
+    content: '\25BC'; /* Unicode for a down arrow */
+    font-size: 1em; /* Adjust size relative to parent font size */
+    transition: transform 0.3s ease-in-out;
+    display: inline-block; /* Essential for transform to work */
+}
+
+.accordion-header.active .icon::before {
+    transform: rotate(-180deg); /* Rotate the arrow when active */
+}
+
+.accordion-content {
+    padding: 0 18px;
+    background-color: rgba(0, 0, 0, 0.3);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 0 0 8px 8px;
+    color: var(--monokai-text);
+}
+
+.accordion-content pre {
+    white-space: pre-wrap; /* Ensures text wraps within the container */
+    word-wrap: break-word; /* Breaks long words if necessary */
+    padding: 15px 0;
+    margin: 0;
+    font-size: 3em; /* Adjust font size for resume content */
+    line-height: 1.6;
+    color: var(--monokai-text);
+}
+
+/* Responsive adjustments for About page */
+@media (max-width: 1200px) {
+    .about-container {
+        max-width: 90%;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 20px 30px;
+    }
+
+    .about-container .about-text {
+        font-size: clamp(1.2em, 3vw, 1.5em);
+    }
+
+    .about-title {
+        font-size: clamp(2em, 5vw, 3em);
+    }
+
+    .accordion-header {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    .accordion-content pre {
+        font-size: .9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 15px 20px;
+    }
+
+    .about-container .about-text {
+        font-size: clamp(1em, 2.5vw, 1.2em);
+    }
+
+    .about-title {
+        font-size: clamp(1.5em, 4vw, 2.5em);
+    }
+
+    .accordion-header {
+        font-size: 1em;
+        padding: 12px;
+    }
+}
+
+/* --- Chat Page Styles --- */
+.chat-page-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.chat-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Same as about-container */
+    padding: 30px 80px; /* Same as about-container */
+    border-radius: 10px; /* Same as about-container */
+    backdrop-filter: blur(5px); /* Same as about-container */
+    max-width: 1200px; /* Same as about-container */
+    width: 100%; /* Same as about-container */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Same as about-container */
+    color: var(--monokai-text); /* Same as about-container */
+    text-align: left; /* Aligned left, matching about-container */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between elements */
+}
+
+.chat-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--monokai-yellow);
+    font-size: clamp(2.5em, 3.8vw, 3.45em); /* Similar to about-text for consistency */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-align: left; /* Align title left, matching about-text */
+}
+
+.chat-intro-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--monokai-text);
+    text-align: left; /* Align intro text left, matching about-text */
+}
+
+/* Chatbot Interface Specific Styles */
+#chatbot-interface {
+    border: 1px solid var(--monokai-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Fixed height for the chat window */
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background for chat area */
+}
+
+#chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Enable scrolling for messages */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: var(--monokai-green);
+    color: var(--monokai-bg);
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: var(--monokai-blue);
+    color: var(--monokai-bg);
+}
+
+#chat-input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid var(--monokai-blue);
+    background-color: rgba(0, 0, 0, 0.6);
+    gap: 10px; /* Space between buttons and input */
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--monokai-red);
+    background-color: var(--monokai-bg);
+    color: var(--monokai-text);
+    font-size: 1em;
+    outline: none;
+}
+
+#user-input::placeholder {
+    color: rgba(248, 248, 242, 0.7);
+}
+
+/* Styling for both Send and Clear buttons */
+#send-button,
+#clear-button {
+    background-color: var(--monokai-red);
+    color: var(--monokai-bg);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+#send-button {
+    font-size: 1em; /* Maintain Send button size */
+}
+
+#clear-button {
+    font-size: 1.5em; /* Make the 'X' larger */
+}
+
+
+#send-button:hover,
+#clear-button:hover {
+    background-color: var(--monokai-orange);
+}
+
+
+/* Responsive adjustments for Chat page */
+@media (max-width: 1200px) {
+    .chat-container {
+        max-width: 90%;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        padding: 20px 30px;
+    }
+
+    .chat-title {
+        font-size: clamp(1.8em, 4vw, 2.5em);
+    }
+
+    .chat-intro-text {
+        font-size: 0.9em;
+    }
+
+    #chatbot-interface {
+        height: 400px;
+    }
+
+    #user-input {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    #send-button,
+    #clear-button {
+        padding: 8px 15px;
+        font-size: 0.9em; /* Adjust button padding and font-size for smaller screens */
+    }
+    #clear-button { /* Adjust only clear button's font-size if necessary for 'X' on smaller screens */
+        font-size: 1.2em; /* Slightly smaller 'X' for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-container {
+        padding: 15px 20px;
+    }
+
+    .chat-title {
+        font-size: clamp(1.5em, 3.5vw, 2em);
+    }
+
+    #chatbot-interface {
+        height: 350px;
+    }
+
+    #chat-input-area {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #user-input {
+        margin-right: 0;
+        width: 100%;
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    #send-button,
+    #clear-button {
+        width: 100%;
+    }
+    #clear-button { /* Adjust only clear button's font-size if necessary for 'X' on very small screens */
+        font-size: 1.1em; /* Even smaller 'X' for very small screens */
+    }
+}
