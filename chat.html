@@ -29,43 +29,40 @@
             </p>
             
             <div id="chatbot-interface">
-                <div id="chat-messages">
-                    </div>
-                <div id="chat-input-area">
-                    <button id="clear-button">&times;</button> <input type="text" id="user-input" placeholder="Type your question here...">
+                <div id="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="user-input" placeholder="Type your message...">
                     <button id="send-button">Send</button>
+                    <button id="clear-button">Clear Chat</button>
                 </div>
             </div>
-
         </div>
     </main>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
             const sendButton = document.getElementById('send-button');
             const clearButton = document.getElementById('clear-button');
-            const userInput = document.getElementById('user-input');
-            const chatMessages = document.getElementById('chat-messages');
 
-            // Function to add the initial bot message
-            function addInitialBotMessage() {
-                const initialMessageDiv = document.createElement('div');
-                initialMessageDiv.classList.add('message', 'bot-message');
-                initialMessageDiv.textContent = "Hello! I'm Charles Vanchieri. How can I help you learn more about me today?";
-                chatMessages.appendChild(initialMessageDiv);
-            }
-
-            // Call it on page load
+            // Initial bot message when chat loads
             addInitialBotMessage();
 
             sendButton.addEventListener('click', sendMessage);
+            clearButton.addEventListener('click', clearChat);
             userInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
                     sendMessage();
                 }
             });
 
-            clearButton.addEventListener('click', clearChat);
+            function addInitialBotMessage() {
+                const initialMessageDiv = document.createElement('div');
+                initialMessageDiv.classList.add('message', 'bot-message');
+                initialMessageDiv.innerHTML = "Hi there! I'm Charles' AI Assistant. How can I help you today?";
+                chatMessages.appendChild(initialMessageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
 
             function sendMessage() {
                 const messageText = userInput.value.trim();
@@ -83,22 +80,38 @@
                 // Clear input
                 userInput.value = '';
 
-                // Simulate bot response (replace with actual AI integration later)
-                setTimeout(() => {
+                // --- NEW: Send message to Python backend ---
+                fetch('http://127.0.0.1:5000', { // Make sure this URL matches your Flask app's address and port
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: messageText }),
+                })
+                .then(response => response.json())
+                .then(data => {
                     const botMessageDiv = document.createElement('div');
                     botMessageDiv.classList.add('message', 'bot-message');
-                    // This is where your AI's response would go
-                    botMessageDiv.textContent = "Thank you for your question! I'm still under construction, but Charles will get back to you soon!"; 
+                    botMessageDiv.textContent = data.response; // Get the AI's response from the backend
                     chatMessages.appendChild(botMessageDiv);
                     chatMessages.scrollTop = chatMessages.scrollHeight;
-                }, 1000);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    const errorMessageDiv = document.createElement('div');
+                    errorMessageDiv.classList.add('message', 'bot-message', 'error-message');
+                    errorMessageDiv.textContent = "Oops! Something went wrong with the AI. Please try again later. Check the browser console and backend server for details.";
+                    chatMessages.appendChild(errorMessageDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                });
+                // --- END NEW ---
             }
 
             function clearChat() {
-                chatMessages.innerHTML = '';
-                addInitialBotMessage();
-                userInput.value = '';
-                chatMessages.scrollTop = chatMessages.scrollHeight;
+                chatMessages.innerHTML = ''; // Clear all messages
+                addInitialBotMessage(); // Add the initial message back
+                userInput.value = ''; // Clear input field
+                chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
             }
         });
     </script>
