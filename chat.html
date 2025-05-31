@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Vanchieri - Chat with me</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html" class="logo-link">Charles Vanchieri</a>
+            </div>
+            <nav class="main-nav">
+                <a href="chat.html" class="nav-link sign-up-btn" id="connect-wallet-btn">Chat</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="https://www.linkedin.com/in/cvanchieri6/" class="nav-link">LinkedIn</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="chat-page-main">
+        <div class="chat-container">
+            <h1 class="chat-title">Chat with Charles.</h1>
+            <p class="chat-intro-text">
+                Ask me anything about my experience, projects, or skills! I'm here to help you get the information you need quickly.
+            </p>
+            
+            <div id="chatbot-interface">
+                <div id="chat-messages">
+                    </div>
+                <div id="chat-input-area">
+                    <button id="clear-button">&times;</button> <input type="text" id="user-input" placeholder="Type your question here...">
+                    <button id="send-button">Send</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sendButton = document.getElementById('send-button');
+            const clearButton = document.getElementById('clear-button');
+            const userInput = document.getElementById('user-input');
+            const chatMessages = document.getElementById('chat-messages');
+
+            // Function to add the initial bot message
+            function addInitialBotMessage() {
+                const initialMessageDiv = document.createElement('div');
+                initialMessageDiv.classList.add('message', 'bot-message');
+                initialMessageDiv.textContent = "Hello! I'm Charles Vanchieri. How can I help you learn more about me today?";
+                chatMessages.appendChild(initialMessageDiv);
+            }
+
+            // Call it on page load
+            addInitialBotMessage();
+
+            sendButton.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            clearButton.addEventListener('click', clearChat);
+
+            function sendMessage() {
+                const messageText = userInput.value.trim();
+                if (messageText === '') return;
+
+                // Add user message to chat
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.classList.add('message', 'user-message');
+                userMessageDiv.textContent = messageText;
+                chatMessages.appendChild(userMessageDiv);
+
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Clear input
+                userInput.value = '';
+
+                // Simulate bot response (replace with actual AI integration later)
+                setTimeout(() => {
+                    const botMessageDiv = document.createElement('div');
+                    botMessageDiv.classList.add('message', 'bot-message');
+                    // This is where your AI's response would go
+                    botMessageDiv.textContent = "Thank you for your question! I'm still under construction, but Charles will get back to you soon!"; 
+                    chatMessages.appendChild(botMessageDiv);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+
+            function clearChat() {
+                chatMessages.innerHTML = '';
+                addInitialBotMessage();
+                userInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>

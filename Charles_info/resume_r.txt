@@ -1,0 +1,73 @@
+Name - Charles Vanchieri | Location - Sydney NSW, Australia
+Email - CVanchieri@gmail.com | LinkedIn - https://www.linkedin.com/in/cvanchieri6 | Portfolio - https://charlesvanchieri.netlify.app/
+
+Customer Operations Leader | Scaling CX, Driving Retention & Innovating with Al-Driven Strategies
+
+• Results-driven leader with over a decade of experience scaling remote teams for dynamic tech platforms. I've boosted
+ customer retention by 15% and elevated satisfaction (35% positive feedback) by aligning CX across product,
+ engineering, and community. Blending strategic leadership, deep operational expertise across complex tech, and Gen 
+ Al certifications, I craft future-ready customer experiences that directly fuel business growth.
+
+Career Highlights
+• Designed and implemented strategic onboarding flows and community initiatives for a digital rewards platform,
+ driving a 15% increase in member retention and 35% increase in positive community feedback.
+• Directed the successful launch of a core digital platform and slashed support response times by 20% through
+ advanced process automation (Intercom, Jira), fundamentally enhancing user satisfaction.
+• Implemented Agile methodologies and streamlined complex department operations across multiple concurrent
+ projects, resulting in significant cost reductions and improved project delivery timelines.
+
+Core Skills
+• Digital Operations • Team Leadership • Strategic Onboarding • Retention & Churn • Customer Support Operations
+• Community Engagement • Process Optimization • Gen Al Applications • Salesforce • Zendesk • Intercom • Jira
+
+Professional Experience
+Zunkz - Customer Success & Operations Manager
+Remote | Nov 2021 - Present
+• Orchestrated end-to-end customer operations and leadership for a global, Web3-native rewards platform.
+• Built and scaled a high-performing remote CX team across support, onboarding, and community engagement.
+• Engineered strategic onboarding flows, boosting member retention by 15%.
+• Directed successful launch of a core blockchain-integrated platform, elevating user satisfaction by 35%.
+• Slashed support response time by 20% via intelligent workflow automation.
+• Managed decentralized financial operations (payroll, treasury, budgets), ensuring optimal resource allocation.
+
+HealthEgo - Founder & CX/Operations Lead
+Remote | Mar 2016 - Dec 2022
+• Founded and spearheaded all CX and operational functions for a mobile platform, from concept to launch.
+• Drove the successful launch of a wellness-focused mobile app, complete with integrated community features.
+• Guided remote development teams through multiple successful product releases.
+• Architected and optimized customer onboarding and support systems from the ground up.
+
+Private Health Coach - Executive Client Services
+Palo Alto, CA | Mar 2016 - Nov 2021
+• Curated and delivered bespoke, high-touch wellness programs for high-performing executive clients.
+• Developed customized health plans and seamlessly managed daily client operations.
+• Ensured rigorous data security and confidentiality through comprehensive NDA agreements.
+• Optimized client outcomes by implementing robust feedback and performance reporting loops.
+
+GreatLyfe - Operations Manager
+San Jose, CA | Sep 2015 - Mar 2016
+• Directed comprehensive day-to-day operations and project execution across product, support, and funding initiatives.
+• Implemented Agile workflows to streamline and accelerate product delivery.
+• Guided operational planning through critical product milestones to ensure seamless launches.
+• Secured early-stage angel funding by developing compelling investor decks.
+
+Equinox - Personal Training Department Manager
+Palo Alto, CA | Dec 2012 - Sep 2015
+• Managed a 45+ person department, overseeing all aspects of operations, staffing, performance, and CX strategy.
+• Developed and implemented new training programs that boosted both employee and client retention by 10%.
+• Optimized the hiring process, implementing a new system that reduced time-to-hire.
+• Streamlined operations through multiple concurrent projects, yielding cost reductions and process improvements.
+• Provided strategic department analysis and performance reports directly to senior leadership, ensuring
+ transparency and accountability.
+
+Education & Certifications
+B.S. Environmental Science - University of Redlands, CA
+• PMP - Coursera (2024)
+• Data Science - BloomTech (2021)
+• Al Prompting - Google & IBM (2024)
+• Cybersecurity - LinkedIn (2025)
+
+Additional
+• Work Rights: Australian Partner Visa (Full, unrestricted)
+• Location: Sydney | Open to hybrid or remote
+• Portfolio: cvanchieri.github.io
