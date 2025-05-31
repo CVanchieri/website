@@ -374,7 +374,7 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 40px 10px; /* Adjusted horizontal padding here */
 }
 
 .chat-container {
@@ -450,11 +450,11 @@ body::before {
 }
 
 #chat-input-area {
-    display: flexbox;
-    padding: 25px;
+    display: flex;
+    padding: 15px;
     border-top: 1px solid var(--monokai-blue);
     background-color: rgba(0, 0, 0, 0.6);
-    gap: 20px; /* Space between buttons and input */
+    gap: 10px; /* Space between buttons and input */
 }
 
 #user-input {
@@ -505,13 +505,13 @@ body::before {
 @media (max-width: 1200px) {
     .chat-container {
         /* Removed: max-width: 90%; */
-        padding: 30px 40px;
+        padding: 30px 40px; /* Adjusted padding for this breakpoint */
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .chat-container {
-        padding: 30px 40px;
+        padding: 20px 30px;
     }
 
     .chat-title {
@@ -533,12 +533,11 @@ body::before {
 
     #send-button,
     #clear-button {
-        padding: 8px 12px;
+        padding: 8px 15px;
         font-size: 0.9em; /* Adjust button padding and font-size for smaller screens */
     }
     #clear-button { /* Adjust only clear button's font-size if necessary for 'X' on smaller screens */
-        padding: 8px 12px;
-        font-size: 0.9em; /* Slightly smaller 'X' for smaller screens */
+        font-size: 1.2em; /* Slightly smaller 'X' for smaller screens */
     }
 }
 
