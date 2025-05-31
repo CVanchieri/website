@@ -374,7 +374,7 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 10px; /* Adjusted horizontal padding here */
+    padding: 40px 0; /* Changed horizontal padding to 0 */
 }
 
 .chat-container {
