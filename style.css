@@ -374,15 +374,15 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0; /* Changed horizontal padding to 0 */
+    padding: 40px 40px; /* Changed horizontal padding to 0 */
 }
 
 .chat-container {
     background-color: rgba(0, 0, 0, 0.7); /* Same as about-container */
-    padding: 30px 80px; /* Same as about-container */
+    padding: 30px 20px; /* Reduced horizontal padding to give more room */
     border-radius: 10px; /* Same as about-container */
     backdrop-filter: blur(5px); /* Same as about-container */
-    max-width: 2000px; /* This is your desired max-width */
+    max-width: 1250px; /* Increased max-width significantly */
     width: 100%; /* Same as about-container */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Same as about-container */
     color: var(--monokai-text); /* Same as about-container */
@@ -417,6 +417,7 @@ body::before {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+     padding: 15px 5px; /* <--- ADD THIS LINE to allow the input box to expand horizontally */
     height: 500px; /* Fixed height for the chat window */
     background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background for chat area */
 }
@@ -431,14 +432,14 @@ body::before {
 }
 
 .message {
-    padding: 10px 15px;
+    padding: 10px 55px;
     border-radius: 15px;
     max-width: 80%;
     word-wrap: break-word;
 }
 
 .user-message {
-    align-self: flex-end;
+    align-self: center;
     background-color: var(--monokai-green);
     color: var(--monokai-bg);
 }
@@ -451,21 +452,27 @@ body::before {
 
 #chat-input-area {
     display: flex;
-    padding: 15px;
+    padding: 10px 0px; /* Reduced padding to maximize input width */
     border-top: 1px solid var(--monokai-blue);
     background-color: rgba(0, 0, 0, 0.6);
-    gap: 10px; /* Space between buttons and input */
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #user-input {
-    flex-grow: 1;
-    padding: 10px 15px;
+    flex: 1; /* Use flex: 1 instead of flex-grow: 1 */
+    padding: 10px 5px;
     border-radius: 20px;
     border: 1px solid var(--monokai-red);
     background-color: var(--monokai-bg);
     color: var(--monokai-text);
     font-size: 1em;
     outline: none;
+    min-width: 0; /* Allow input to shrink if needed */
+    width: auto; /* Let flexbox handle the width */
+    box-sizing: border-box; /* Include padding and border in width calculation */
 }
 
 #user-input::placeholder {
@@ -484,22 +491,21 @@ body::before {
     font-weight: 700;
     transition: background-color 0.3s ease;
     flex-shrink: 0; /* Prevent buttons from shrinking */
+    white-space: nowrap; /* Prevent button text from wrapping */
 }
 
 #send-button {
-    font-size: 1em; /* Maintain Send button size */
+    font-size: 1em;
 }
 
 #clear-button {
-    font-size: 1.5em; /* Make the 'X' larger */
+    font-size: 1em;
 }
-
 
 #send-button:hover,
 #clear-button:hover {
     background-color: var(--monokai-orange);
 }
-
 
 /* Responsive adjustments for Chat page */
 @media (max-width: 1200px) {
@@ -511,7 +517,7 @@ body::before {
 
 @media (max-width: 768px) {
     .chat-container {
-        padding: 20px 30px;
+        padding: 15px 30px;
     }
 
     .chat-title {
@@ -526,6 +532,11 @@ body::before {
         height: 400px;
     }
 
+    #chat-input-area {
+        padding: 12px; /* Slightly reduce padding on smaller screens */
+        gap: 8px; /* Reduce gap slightly */
+    }
+
     #user-input {
         padding: 8px 12px;
         font-size: 0.9em;
@@ -534,10 +545,7 @@ body::before {
     #send-button,
     #clear-button {
         padding: 8px 15px;
-        font-size: 0.9em; /* Adjust button padding and font-size for smaller screens */
-    }
-    #clear-button { /* Adjust only clear button's font-size if necessary for 'X' on smaller screens */
-        font-size: 1.2em; /* Slightly smaller 'X' for smaller screens */
+        font-size: 0.9em;
     }
 }
 
@@ -555,22 +563,21 @@ body::before {
     }
 
     #chat-input-area {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        flex-direction: row; /* Keep horizontal layout instead of stacking */
+        gap: 8px;
+        padding: 12px;
     }
 
     #user-input {
-        margin-right: 0;
-        width: 100%;
-        box-sizing: border-box; /* Include padding in width calculation */
+        padding: 10px 15px;
+        font-size: 0.9em;
+        /* Remove the width: 100% and box-sizing that was forcing full width */
     }
 
     #send-button,
     #clear-button {
-        width: 100%;
-    }
-    #clear-button { /* Adjust only clear button's font-size if necessary for 'X' on very small screens */
-        font-size: .9em; /* Even smaller 'X' for very small screens */
+        padding: 10px 15px;
+        font-size: 0.9em;
+        /* Remove width: 100% to prevent buttons from taking full width */
     }
 }
