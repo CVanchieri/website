@@ -382,7 +382,7 @@ body::before {
     padding: 30px 80px; /* Same as about-container */
     border-radius: 10px; /* Same as about-container */
     backdrop-filter: blur(5px); /* Same as about-container */
-    max-width: 2000px; /* Same as about-container */
+    max-width: 2000px; /* This is your desired max-width */
     width: 100%; /* Same as about-container */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Same as about-container */
     color: var(--monokai-text); /* Same as about-container */
@@ -504,6 +504,7 @@ body::before {
 /* Responsive adjustments for Chat page */
 @media (max-width: 1200px) {
     .chat-container {
+        /* Removed: max-width: 90%; */
         padding: 30px 40px;
     }
 }
