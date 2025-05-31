@@ -81,7 +81,8 @@
                 userInput.value = '';
 
                 // --- NEW: Send message to Python backend ---
-                fetch('http://127.0.0.1:5000', { // Make sure this URL matches your Flask app's address and port
+                fetch('http://127.0.0.1:5000', { 
+                    // Make sure this URL matches your Flask app's address and port
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -92,7 +93,8 @@
                 .then(data => {
                     const botMessageDiv = document.createElement('div');
                     botMessageDiv.classList.add('message', 'bot-message');
-                    botMessageDiv.textContent = data.response; // Get the AI's response from the backend
+                    botMessageDiv.textContent = data.response; 
+                    // Get the AI's response from the backend
                     chatMessages.appendChild(botMessageDiv);
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 })
@@ -111,7 +113,8 @@
                 chatMessages.innerHTML = ''; // Clear all messages
                 addInitialBotMessage(); // Add the initial message back
                 userInput.value = ''; // Clear input field
-                chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight; 
+                // Scroll to bottom
             }
         });
     </script>
