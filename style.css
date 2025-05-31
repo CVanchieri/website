@@ -504,7 +504,6 @@ body::before {
 /* Responsive adjustments for Chat page */
 @media (max-width: 1200px) {
     .chat-container {
-        max-width: 90%;
         padding: 30px 40px;
     }
 }
