@@ -417,7 +417,7 @@ body::before {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-     padding: 15px 5px; /* <--- ADD THIS LINE to allow the input box to expand horizontally */
+     padding: 15px 15px; /* <--- ADD THIS LINE to allow the input box to expand horizontally */
     height: 500px; /* Fixed height for the chat window */
     background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background for chat area */
 }
@@ -552,7 +552,7 @@ body::before {
 
 @media (max-width: 480px) {
     .chat-container {
-        padding: 15px 20px;
+        padding: 15px 10px;
     }
 
     .chat-title {
@@ -564,9 +564,12 @@ body::before {
     }
 
     #chat-input-area {
-        flex-direction: row; /* Keep horizontal layout instead of stacking */
-        gap: 8px;
-        padding: 12px;
+        flex-direction: row;
+        padding: 8px 10px;
+        gap: 5px;
+        max-width: 420px; /* <<< CHANGED: Increased from 380px to provide more space */
+        margin: 0 auto; /* Keep centered */
+        flex-wrap: nowrap; /* Ensures items stay on one line */
     }
 
     #user-input {
