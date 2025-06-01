@@ -565,7 +565,7 @@ body::before {
 
     #chat-input-area {
         flex-direction: row;
-        padding: 8px 10px;
+        padding: 4px 2px;
         gap: 5px;
         max-width: 420px;
         margin: 0 auto;
@@ -573,14 +573,14 @@ body::before {
     }
 
     #user-input {
-        padding: 6px 2px;
+        padding: 3px 2px;
         font-size: 0.8em;
         min-width: 0;
     }
 
     #send-button,
     #clear-button {
-        padding: 6px 8px; /* CHANGE THIS: Reduced horizontal padding */
+        padding: 3px 4px; /* CHANGE THIS: Reduced horizontal padding */
         font-size: 0.8em;
     }
 }
