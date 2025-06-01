@@ -23,7 +23,7 @@
 
     <main class="chat-page-main">
         <div class="chat-container">
-            <h1 class="chat-title">Chat with Charles V.</h1>
+            <h1 class="chat-title">Chat with Charles.</h1>
             <p class="chat-intro-text">
                 Ask me anything about my experience, projects, or skills! I'm here to help you get the information you need quickly.
             </p>
@@ -59,7 +59,7 @@
             function addInitialBotMessage() {
                 const initialMessageDiv = document.createElement('div');
                 initialMessageDiv.classList.add('message', 'bot-message');
-                initialMessageDiv.innerHTML = "Hi there! I'm Charles' AI Assistant. How can I help you today?";
+                initialMessageDiv.innerHTML = "Hi there! I'm Charles, how can I help you today?";
                 chatMessages.appendChild(initialMessageDiv);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
