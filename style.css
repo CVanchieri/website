@@ -245,16 +245,6 @@ body::before {
     line-height: 1.7;
 }
 
-.about-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: var(--monokai-yellow);
-    font-size: clamp(3em, 4vw, 5em);
-    margin-bottom: 30px;
-    text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
 /* Accordion Styles */
 .accordion {
     margin-top: 20px;
@@ -335,10 +325,6 @@ body::before {
         font-size: clamp(1.2em, 3vw, 1.5em);
     }
 
-    .about-title {
-        font-size: clamp(2em, 5vw, 3em);
-    }
-
     .accordion-header {
         font-size: 1.2em;
         padding: 15px;
@@ -356,10 +342,6 @@ body::before {
 
     .about-container .about-text {
         font-size: clamp(1em, 2.5vw, 1.2em);
-    }
-
-    .about-title {
-        font-size: clamp(1.5em, 4vw, 2.5em);
     }
 
     .accordion-header {
