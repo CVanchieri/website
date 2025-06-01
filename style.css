@@ -573,9 +573,9 @@ body::before {
     }
 
     #user-input {
-        padding: 10px 15px;
-        font-size: 0.9em;
-        /* Remove the width: 100% and box-sizing that was forcing full width */
+        padding: 6px 2px;
+        font-size: 0.8em;
+        min-width: 0; /* ADD THIS LINE */
     }
 
     #send-button,
