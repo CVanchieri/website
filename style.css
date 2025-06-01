@@ -379,7 +379,7 @@ body::before {
 
 .chat-container {
     background-color: rgba(0, 0, 0, 0.7); /* Same as about-container */
-    padding: 30px 20px; /* Reduced horizontal padding to give more room */
+    padding: 20px 10px; /* Reduced horizontal padding to give more room */
     border-radius: 10px; /* Same as about-container */
     backdrop-filter: blur(5px); /* Same as about-container */
     max-width: 1250px; /* Increased max-width significantly */
@@ -580,7 +580,7 @@ body::before {
 
     #send-button,
     #clear-button {
-        padding: 6px 8px;
+        padding: 6px 5px;
         font-size: 0.8em;
     }
 
