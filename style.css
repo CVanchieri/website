@@ -459,6 +459,7 @@ body::before {
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    flex-wrap: nowrap;
 }
 
 #user-input {
