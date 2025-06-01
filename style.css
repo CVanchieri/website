@@ -580,7 +580,7 @@ body::before {
 
     #send-button,
     #clear-button {
-        padding: 10px 15px;
+        padding: 10px 5px;
         font-size: 0.9em;
         /* Remove width: 100% to prevent buttons from taking full width */
     }
