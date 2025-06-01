@@ -439,7 +439,7 @@ body::before {
 }
 
 .user-message {
-    align-self: center;
+    align-self: flex-end;
     background-color: var(--monokai-green);
     color: var(--monokai-bg);
 }
