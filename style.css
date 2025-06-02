@@ -71,8 +71,8 @@ body::before {
     color: var(--monokai-text);
     text-decoration: none;
     font-weight: 400;
-    margin-left: 30px;
-    font-size: 1.1em;
+    margin-left: 10px;
+    font-size: 1.5em;
     transition: color 0.3s ease;
 }
 
@@ -381,15 +381,15 @@ body::before {
     font-size: clamp(2.5em, 3.8vw, 3.45em); /* Similar to about-text for consistency */
     margin-bottom: 10px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    text-align: left; /* Align title left, matching about-text */
+    text-align: center; /* Align title left, matching about-text */
 }
 
 .chat-intro-text {
-    font-size: 1.1em;
+    font-size: 2em;
     line-height: 1.6;
     margin-bottom: 20px;
     color: var(--monokai-text);
-    text-align: left; /* Align intro text left, matching about-text */
+    text-align: center; /* Align intro text left, matching about-text */
 }
 
 /* Chatbot Interface Specific Styles */
@@ -564,5 +564,106 @@ body::before {
     #clear-button {
         padding: 3px 4px; /* CHANGE THIS: Reduced horizontal padding */
         font-size: 0.8em;
+    }
+}
+
+/* --- Project Page Styles --- */
+.projects-page-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.projects-container {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background for projects */
+    padding: 30px 60px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    color: var(--monokai-text);
+    text-align: left;
+    
+}
+
+.projects-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--monokai-yellow);
+    font-size: clamp(2.5em, 3.8vw, 3.45em); /* Similar to about-text for consistency */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.projects-text {
+    font-size: 2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.project-item {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly lighter background for individual project items */
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--monokai-blue);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-item h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--monokai-green);
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for Project page */
+@media (max-width: 1200px) {
+    .projects-container {
+        max-width: 90%;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 20px 30px;
+    }
+
+    .projects-title {
+        font-size: clamp(1.8em, 4vw, 2.5em);
+    }
+
+    .projects-text {
+        font-size: 0.9em;
+    }
+
+    .project-item h2 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-container {
+        padding: 15px 20px;
+    }
+
+    .projects-title {
+        font-size: clamp(1.5em, 3.5vw, 2em);
+    }
+
+    .project-item h2 {
+        font-size: 1.2em;
     }
 }
